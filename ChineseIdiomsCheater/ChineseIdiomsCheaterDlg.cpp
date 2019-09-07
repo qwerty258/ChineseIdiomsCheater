@@ -220,7 +220,7 @@ void CChineseIdiomsCheaterDlg::OnClickedButtonSearch()
 	p_buffer[sqlutf8size] = '\0';
 	if (SQLITE_OK != sqlite3_exec(p_sqlite3_handle, p_buffer, callback, this, &sqlite_errmsg))
 	{
-		//::MessageBoxA(m_hWnd, sqlite_errmsg, NULL, 0);
+		::MessageBoxA(m_hWnd, sqlite_errmsg, NULL, 0);
 		sqlite3_free(sqlite_errmsg);
 	}
 	free(p_buffer);
