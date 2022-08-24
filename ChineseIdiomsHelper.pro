@@ -6,7 +6,13 @@ CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+GIT_COMMIT   = $$system(git rev-parse HEAD)
+GIT_TAG      = $$system(git describe --tags)
+APP_VERSION  = "$${GIT_COMMIT}\n$${GIT_TAG}"
+
+DEFINES += APP_VERSION=\"\\\"$$APP_VERSION\\\"\"
 
 SOURCES += \
     main.cpp \

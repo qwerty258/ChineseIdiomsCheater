@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     DatabaseFileCheck();
     ui->setupUi(this);
+    QString version = "Version:\n" APP_VERSION;
+    ui->LabelVersion->setText(version);
 }
 
 void MainWindow::DatabaseFileCheck()
